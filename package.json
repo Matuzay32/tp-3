@@ -1,0 +1,25 @@
+{
+  "name": "trabajo-3",
+  "version": "1.0.0",
+  "description": "esta es mi api resto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matuzay32/tp-3.git"
+  },
+  "author": "Ezequiel Rey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matuzay32/tp-3/issues"
+  },
+  "homepage": "https://github.com/Matuzay32/tp-3#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.1"
+  }
+}
