@@ -1,0 +1,39 @@
+Siempre en esta ruta se necesita un token
+
+GET con get en esta ruta obtenemos todos los platos
+
+POST : creamos un plato nuevo
+
+
+http://localhost:3000/api/productos
+
+{
+    "nombre": "ejemplo",
+        "descripcion": " Ejemplo",
+        "precio": 200
+}
+
+
+
+
+Post con un post en esta ruta creamos un usuario
+http://localhost:3000/api/users/registrer
+
+			{
+	"username""ejemplo",
+	"password":"passEjemplo"
+	"email":"emailEjemplo"
+
+			}
+
+
+POT: Cuando hacemos un POST en esta ruta no devuelve un token si es que el usuario esta en la base de datos
+de ser asi podemos usar ese token para  la primer ruta de productos, para obtener platos 
+http://localhost:3000/api/users/login
+
+
+
+CLAVE TOKEN : se obtiene en la ruta users/login si el usuario es correcto
+La clave token se envia en las cabeceras o headers
+
+se utiliza para obtener los productos o poder agregar mas 
