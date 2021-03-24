@@ -28,7 +28,7 @@
 .orden-formularios{
     display: grid;
     grid-template-columns: repeat(5, 200px);
-    grid-template-rows: repeat(15, 750px);
+    grid-template-rows: repeat(1, 750px);
     #mi-formulario{
         grid-column: 3;
         grid-row: 1;
@@ -118,7 +118,7 @@
 
   
   .mis-usuarios-li {
-    grid-column: 5;
+    grid-column: 6;
     grid-row: 1;
     color: white;
     padding: 10px;
