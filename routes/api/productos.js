@@ -15,7 +15,7 @@ res.json(producto);
 
 });
 
-router.put("/productoId",async (req,res)=>{
+router.put("/:productoId",async (req,res)=>{
 
     await Producto.update(req.body,{
         where:{id: req.params.productoId}

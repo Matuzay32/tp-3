@@ -1,12 +1,14 @@
 
-
+const btnModificarPlato               =document.getElementById("btn-modificar-plato");
 const formularioCrearPlato            =document.getElementById("formulario-crear-plato");
 const btnCrearPlato                   =document.getElementById("btn-crear-plato");
-const btnBorrarPlato                   =document.getElementById("btn-borrar-plato");
+const btnBorrarPlato                  =document.getElementById("btn-borrar-plato");
 const obtenerTodosLosPlatosDisponibles= document.getElementById("obtener-todos-los-platos");
 const contenedorTodosLosPlatos        =document.getElementById("contenedor-todos-los-platos");
+
 var todoLosPlatosArray =[];
 var url = 'http://localhost:3000/api/productos';
+
 
 
 var plato = {
@@ -18,9 +20,9 @@ var plato = {
 
 btnCrearPlato.addEventListener("click",(ev)=>{
     ev.preventDefault();
-   var  nombre      =document.getElementById("nombre").value;
-   var  precio   =document.getElementById("precio").value;
-   var  descripcion  =document.getElementById("descripcion").value;
+   var  nombre         =document.getElementById("nombre").value;
+   var  precio         =document.getElementById("precio").value;
+   var  descripcion    =document.getElementById("descripcion").value;
 
     
     plato.nombre        = nombre;
@@ -48,7 +50,7 @@ obtenerTodosLosPlatosDisponibles.addEventListener("click",(ev)=>{
 
 
 btnBorrarPlato.addEventListener("click",(ev)=>{
-var idPlatoABorrar=document.getElementById("borrar-plato").value
+let idPlatoABorrar=document.getElementById("borrar-plato").value
 
 borrandoPlato(idPlatoABorrar);
 
@@ -56,8 +58,32 @@ borrandoPlato(idPlatoABorrar);
 
 })
 
+ btnModificarPlato.addEventListener("click",(ev)=>{
+  ev.preventDefault();
+  var idPlatoAModificar=document.getElementById("borrar-plato").value
+  var urlPut = `http://localhost:3000/api/productos/${idPlatoAModificar}`;
+
+  plato.nombre      =document.getElementById("nombre").value;
+  plato.precio      =document.getElementById("precio").value;
+  plato.descripcion =document.getElementById("descripcion").value;
+  
+  modificandoPlato(urlPut,plato);
+  console.log("urlPut",urlPut);
 
 
+})
+ 
+function modificandoPlato(urlPut,plato) {
+  fetch(urlPut, {
+    method: 'PUT', // or 'PUT'
+    body: JSON.stringify(plato), 
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .catch(error => console.error('Error:', error))
+  .then(response => console.log('Success:', response));
+}
 
 function creandoPlato(plato) {
     fetch(url, {
