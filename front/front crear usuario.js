@@ -1,6 +1,6 @@
 const formulario    =document.getElementById("mi-formulario");
 const btnRegistrar  =document.getElementById("btn-registrar");
-var url = 'http://localhost:3000/api/users/registrer';
+var urlUser = 'http://localhost:3000/api/users/registrer';
 
 
 var usuario = {
@@ -32,7 +32,7 @@ btnRegistrar.addEventListener("click",(ev)=>{
 
 
 function creandoUsuario(usuario) {
-    fetch(url, {
+    fetch(urlUser, {
         method: 'POST', // or 'PUT'
         body: JSON.stringify(usuario), 
         headers:{
