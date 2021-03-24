@@ -36,7 +36,13 @@ btnCrearPlato.addEventListener("click",(ev)=>{
 })
 
 obtenerTodosLosPlatosDisponibles.addEventListener("click",(ev)=>{
+  contenedorTodosLosPlatos.innerHTML = "";
+
+  setTimeout(() => {
   obtenerTodosLosPlatos();
+    
+  }, 100);
+
       var JSONString2 =JSON.stringify(todoLosPlatosArray) ;
       var pasadoAObj = JSON.parse(JSONString2);
 
@@ -59,7 +65,6 @@ borrandoPlato(idPlatoABorrar);
 })
 
  btnModificarPlato.addEventListener("click",(ev)=>{
-  ev.preventDefault();
   var idPlatoAModificar=document.getElementById("borrar-plato").value
   var urlPut = `http://localhost:3000/api/productos/${idPlatoAModificar}`;
 
