@@ -48,7 +48,7 @@ obtenerTodosLosPlatosDisponibles.addEventListener("click",(ev)=>{
 
       for (let index = 0; index < todoLosPlatosArray.length; index++) {
       console.log(pasadoAObj[index])
-      contenedorTodosLosPlatos.innerHTML +=`<div><p>Nombre: ${pasadoAObj[index].nombre}</p> <p>Precio: ${pasadoAObj[index].precio}</p> <p>Descripción: ${pasadoAObj[index].descripcion}</p> <p>Creado: ${pasadoAObj[index].createdAt}</p><p>ID: ${pasadoAObj[index].id}</p></div>` 
+      contenedorTodosLosPlatos.innerHTML +=`<div><p>PLATO: </p> <p>Nombre: ${pasadoAObj[index].nombre}</p> <p>Precio: ${pasadoAObj[index].precio}</p> <p>Descripción: ${pasadoAObj[index].descripcion}</p> <p>Creado: ${pasadoAObj[index].createdAt}</p><p>ID: ${pasadoAObj[index].id}</p></div>` 
         
       }
 

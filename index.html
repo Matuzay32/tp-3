@@ -9,7 +9,7 @@
 </head>
 <body>
     <button id="obtener-todos-los-platos">Obtener todos los platos</button>
-    <button id="generar-token">Generar Token</button>
+    <!-- <button id="generar-token">Generar Token</button> -->
     
 <section class="orden-formularios">
 
@@ -33,6 +33,41 @@
     
              <input id="btn-registrar" class="btn" type="submit" value="Registrar">    
     </form>
+
+
+
+
+    <form class="form-registro" id="login">
+        <h4 class="titulo-formulario">LOGIN</h4>
+
+        <label for=""> Usuario:</label>
+        <input  class="input-estilo" type="text" name="username" id="username-l" placeholder="Ingrese el usuario, para registrarse">
+        <label for=""> Password:</label>
+
+        <input class="input-estilo" type="password" name="password" id="password-l" placeholder="Ingrese su contraseña">
+
+
+        <label for=""> Email:</label>
+
+        <input class="input-estilo"type="email" name="email" id="email-l" placeholder="Ingrese su email">
+
+        <label for=""> Su Token:</label>
+
+        <input class="input-estilo"type="token" name="token" id="token-l" placeholder="Ingrese su token">
+        
+
+
+        <button class="btn" id="generar-token">Entrar y genera Token</button>    
+        <button class="btn" id="Enviar-token">Enviar Token</button>    
+</form>
+
+
+
+
+
+    
+
+    
     
     <form class="form-registro" id="formulario-crear-plato">
         <h4 class="titulo-formulario">Formulario de creacion de platos</h4>
@@ -61,12 +96,12 @@
     
 <div class="mis-usuarios-li" id="contenedor-todos-los-platos">
     
+</div>
 
 
 </section>
     
     <!-- <div><p>Nombre: Milanesa</p> <p>Precio: 600</p> <p>Descripción: Super milanga con papas</p> <p>Creado: 20032021</p></div> -->
-</div>
 
 <script src="front/front crear usuario.js"></script>
 <script src="front/front crear plato.js"></script>

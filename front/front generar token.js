@@ -12,10 +12,10 @@ var usuario   = {
 
 
 btnToken.addEventListener("click",(ev)=>{
-
-    var  email     =document.getElementById("email").value;
-   var  username   =document.getElementById("username").value;
-   var  password  =document.getElementById("password").value;
+ev.preventDefault();
+    var  email     =document.getElementById("email-l").value;
+   var  username   =document.getElementById("username-l").value;
+   var  password  =document.getElementById("password-l").value;
    
    usuario.username = username;
     usuario.password = password;

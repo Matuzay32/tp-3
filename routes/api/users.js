@@ -50,7 +50,7 @@ const createToken = (user) =>{
     const playLoad ={
         usuarioId:user.id,
         createAt:moment().unix(),
-        expiredAt:moment().add(5,"minutes").unix()
+        expiredAt:moment().add(30,"minutes").unix()
     }
     return jwt.encode(playLoad,"frase secreta");
 
