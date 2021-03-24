@@ -2,6 +2,7 @@
 
 const formularioCrearPlato            =document.getElementById("formulario-crear-plato");
 const btnCrearPlato                   =document.getElementById("btn-crear-plato");
+const btnBorrarPlato                   =document.getElementById("btn-borrar-plato");
 const obtenerTodosLosPlatosDisponibles= document.getElementById("obtener-todos-los-platos");
 const contenedorTodosLosPlatos        =document.getElementById("contenedor-todos-los-platos");
 var todoLosPlatosArray =[];
@@ -46,6 +47,16 @@ obtenerTodosLosPlatosDisponibles.addEventListener("click",(ev)=>{
 })
 
 
+btnBorrarPlato.addEventListener("click",(ev)=>{
+var idPlatoABorrar=document.getElementById("borrar-plato").value
+
+borrandoPlato(idPlatoABorrar);
+
+  
+
+})
+
+
 
 
 function creandoPlato(plato) {
@@ -67,4 +78,12 @@ function obtenerTodosLosPlatos() {
   .then((data) => todoLosPlatosArray=data)
 
   
+}
+
+function borrandoPlato(id) {
+  fetch(url+"/"+id, {
+      method: 'DELETE', 
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
 }
