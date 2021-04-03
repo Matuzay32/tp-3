@@ -18,6 +18,7 @@ const Producto = ProductoModel(sequelize_ruta,Sequelize);
 const User = UserModel(sequelize_ruta,Sequelize);
 const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 
+Pedido.hasOne(User);
 
 
 sequelize_ruta.sync({force :false})

@@ -11,7 +11,7 @@ module.exports =(sequelize,type) =>{
         tipoPago: type.STRING,
         precio:type.INTEGER,
         direccionEnvio:type.STRING,
-        usuario:type.STRING,
+       // usuario:type.STRING
     })
 
     return Pedidos
