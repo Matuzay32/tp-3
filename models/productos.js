@@ -1,5 +1,5 @@
 module.exports =(sequelize,type) =>{
-    return sequelize.define("platos",{
+    const Platos = sequelize.define("platos",{
         id:{
             type: type.INTEGER,
             primaryKey:true,
@@ -9,4 +9,7 @@ module.exports =(sequelize,type) =>{
         descripcion: type.STRING,
         precio: type.INTEGER,
     })
+
+
+    return Platos;
 }

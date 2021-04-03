@@ -30,7 +30,11 @@ router.post("/registrer",async (req,res)=>{
         
     }
     if (password) {
-         res.json({sucess:createToken(user)})
+         res.json(
+             {
+                Token:createToken(user),
+                Usuario:"ha ingresado el Usuario Correctamente"
+                })
     }else{
     res.json({error: " La contraseña o el usuario son incorrectos"});
         

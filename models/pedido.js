@@ -1,7 +1,6 @@
 
-const Usuario = require("./users");
 module.exports =(sequelize,type) =>{
-    return sequelize.define("pedidos",{
+    const Pedidos=  sequelize.define("pedidos",{
         pedidoId:{
             type: type.INTEGER,
             primaryKey:true,
@@ -14,4 +13,6 @@ module.exports =(sequelize,type) =>{
         direccionEnvio:type.STRING,
         usuario:type.STRING
     })
+
+    return Pedidos
 }
