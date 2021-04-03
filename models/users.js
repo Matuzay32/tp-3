@@ -8,6 +8,8 @@ module.exports =(sequelize,type) =>{
         username: type.STRING,
         email: type.STRING,
         password: type.STRING,
+        direccion: type.STRING,
+        numero:type.STRING,
 
     })
 

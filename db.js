@@ -18,9 +18,16 @@ const Producto = ProductoModel(sequelize_ruta,Sequelize);
 const User = UserModel(sequelize_ruta,Sequelize);
 const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 
-Pedido.hasOne(User);
+
+//Asociaciones 
+// el pedido tiene un usuario 
+//añadir una claver foraea del tipo user id
+ 
+Pedido.belongsTo(User);
 
 
+
+ 
 sequelize_ruta.sync({force :false})
 .then(()=>{
     console.log("tablas sincronizadas");
