@@ -27,13 +27,16 @@ http://localhost:3000/api/users/registrer
 			}
 
 
-POT: Cuando hacemos un POST en esta ruta no devuelve un token si es que el usuario esta en la base de datos
+POST: Cuando hacemos un POST en esta ruta no devuelve un token si es que el usuario esta en la base de datos
 de ser asi podemos usar ese token para  la primer ruta de productos, para obtener platos 
 http://localhost:3000/api/users/login
 
 
 
 CLAVE TOKEN : se obtiene en la ruta users/login si el usuario es correcto
-La clave token se envia en las cabeceras o headers
+La clave token se envia en las cabeceras o headers como:
+
+"user-token": mi token 
+
 
 se utiliza para obtener los productos o poder agregar mas 

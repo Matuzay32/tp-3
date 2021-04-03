@@ -22,7 +22,7 @@ ev.preventDefault();
     usuario.email    = email;
     generarToken(usuario)
     alert("Si su usuario es correcto, abra la consola y tendra su clave Token");
-})
+});
 
 
 function generarToken(usuario) {

@@ -8,7 +8,7 @@ module.exports =(sequelize,type) =>{
             autoIncrement:true
         },
         estado: type.STRING,
-        hora: type.STRING,
+        hora: type.TIME,
         tipoPago: type.STRING,
         precio:type.INTEGER,
         direccionEnvio:type.STRING,
