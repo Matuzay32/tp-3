@@ -23,9 +23,9 @@ router.put("/:productoId",async (req,res)=>{
     res.json({succcess: "update correcto"});
     
     
-    });
+});
 
-    router.delete("/:productoId",async (req,res)=>{
+router.delete("/:productoId",async (req,res)=>{
 
       await Producto.destroy({
           where:{id: req.params.productoId}
@@ -33,7 +33,7 @@ router.put("/:productoId",async (req,res)=>{
       res.json({succcess: "producto borrado"});
       
       
-      });
+});
    
 
     

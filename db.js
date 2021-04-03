@@ -26,7 +26,6 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 Pedido.belongsTo(User);
 
 
-
  
 sequelize_ruta.sync({force :false})
 .then(()=>{
