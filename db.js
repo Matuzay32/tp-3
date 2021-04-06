@@ -24,7 +24,8 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 //añadir una claver foraea del tipo user id
  
 Pedido.belongsTo(User);
-
+Pedido.belongsTo(Producto);
+//TODO: arreglar esto y dejarlo como estaba antes fijarme en git hub
 
  
 sequelize_ruta.sync({force :false})
