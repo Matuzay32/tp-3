@@ -1,9 +1,19 @@
 const router = require("express").Router();
 
-const {Pedido} = require("../../db")
+const {Pedido} = require("../../db");
+const {User}                    = require("../../db");
+
 
 router.get("/", async(req,res)=>{
-    const pedidos =  await Pedido.findAll();
+    const pedidos =  await Pedido.findAll({
+        attributes: ['estado', 'hora','tipoPago',"userId","platoId"],
+        include:[{
+            model: User, attributes: ["id",'username',"email","direccion","numero"]
+           
+          }]
+        
+      });
+    
     res.json(pedidos);
 });
 
