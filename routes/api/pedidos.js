@@ -2,17 +2,22 @@ const router = require("express").Router();
 
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
-const {Producto}                  = require("../../db");
+const {Producto}                = require("../../db");
 
 
 
 router.get("/", async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','hora','tipoPago',"userId","platoId"],
-        include:[{
-            model: User, attributes: ["id",'username',"email","direccion","numero"]
+        include:[
+            {
+            model: User, 
+            attributes: ["id",'username',"email","direccion","numero"]
            
-          }]
+          },{
+              model: Producto, 
+              attributes: ['nombre',"precio","descripcion"]
+            }]
         
       });
     
