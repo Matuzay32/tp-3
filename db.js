@@ -25,10 +25,10 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
  
 Pedido.belongsTo(User);
 Pedido.belongsTo(Producto);
-/* 
-Pedido.belongsToMany(Producto, { through: "VariosProductos" });
-Producto.belongsToMany(Pedido, { through: "VariosPedidos" });
- */
+ 
+//Pedido.belongsToMany(Producto, { through: "pedidos" });
+//Producto.belongsToMany(Pedido, { through: "VariosPedidos" });
+ 
 sequelize_ruta.sync({force :false})
 .then(()=>{
     console.log("tablas sincronizadas");
