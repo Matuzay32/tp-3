@@ -36,7 +36,7 @@ router.post("/",async (req,res)=>{
 router.put("/:pedidoId",async (req,res)=>{
 
         await Pedido.update(req.body,{
-            where:{id: req.params.pedidoId}
+            where:{pedidoId: req.params.pedidoId}
         });
         res.json({succcess: "update correcto"});
         
@@ -46,8 +46,8 @@ router.put("/:pedidoId",async (req,res)=>{
 
 router.delete("/:pedidoId",async (req,res)=>{
 
-        await Producto.destroy({
-            where:{id: req.params.pedidoId}
+        await Pedido.destroy({
+            where:{pedidoId: req.params.pedidoId}
         });
         res.json({succcess: "producto borrado"});
         
