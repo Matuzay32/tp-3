@@ -6,12 +6,21 @@ module.exports =(sequelize,type) =>{
             primaryKey:true,
             autoIncrement:true
         },
-        estado: type.STRING,
-        hora: type.TIME,
+        estado: {
+            type:type.STRING,
+            defaultValue:"En proceso"
+        },
+        
+        hora:{
+            type: type.DATE,
+            defaultValue: type.NOW()
+
+        },
         tipoPago: type.STRING,
         precio:type.INTEGER,
         direccionEnvio:type.STRING,
-       // usuario:type.STRING
+        
+       
     })
 
     return Pedidos

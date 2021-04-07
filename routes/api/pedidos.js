@@ -1,7 +1,9 @@
 const router = require("express").Router();
 
-const {Pedido} = require("../../db");
+const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
+const {Producto}                  = require("../../db");
+
 
 
 router.get("/", async(req,res)=>{
