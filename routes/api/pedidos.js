@@ -27,7 +27,9 @@ router.get("/", async(req,res)=>{
 router.post("/",async (req,res)=>{
 
     const pedido = await Pedido.create(req.body);
+    console.log(req,"este es mi rec");
     res.json(pedido);
+    console.log(res, "esta es mi respuesta");
     
     
 });
@@ -39,7 +41,7 @@ router.put("/:pedidoId",async (req,res)=>{
             where:{pedidoId: req.params.pedidoId}
         });
         res.json({succcess: "update correcto"});
-        
+
         
 });
 

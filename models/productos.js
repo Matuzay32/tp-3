@@ -1,7 +1,6 @@
 module.exports =(sequelize,type) =>{
     const Platos = sequelize.define("platos",{
         id:{
-            type:type.ARRAY,
             type: type.INTEGER,
             primaryKey:true,
             autoIncrement:true

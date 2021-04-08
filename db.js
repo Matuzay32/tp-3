@@ -26,7 +26,7 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 Pedido.belongsTo(User);
 Pedido.belongsTo(Producto);
  
-//Pedido.belongsToMany(Producto, { through: "pedidos" });
+//Pedido.belongsToMany(Producto, { through: "platosPorPedido" });
 //Producto.belongsToMany(Pedido, { through: "VariosPedidos" });
  
 sequelize_ruta.sync({force :false})
