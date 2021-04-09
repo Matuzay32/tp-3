@@ -24,7 +24,7 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 //añadir una claver foraea del tipo user id
  
 Pedido.belongsTo(User);
-//Pedido.belongsTo(Producto);
+Pedido.belongsTo(Producto);
  
 //Pedido.belongsToMany(Producto, { through: "platosPorPedido" });
 //Producto.belongsToMany(Pedido, { through: "VariosPedidos" });

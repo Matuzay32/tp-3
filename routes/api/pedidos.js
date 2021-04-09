@@ -1,6 +1,5 @@
 const router = require("express").Router();
 
-const { compareSync } = require("bcryptjs");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
@@ -13,17 +12,16 @@ var obj = {
 
 router.get("/", async(req,res)=>{
     const pedidos =  await Pedido.findAll({
-        attributes: ['pedidoId','estado','hora','tipoPago',"userId","platoId"],
-        include:[
+        attributes: ['pedidoId','estado','pedidoId','tipoPago'],
+        include: [
             {
-            model: User, 
-            attributes: ["id",'username',"email","direccion","numero"]
-           
-          },{
-              model: Producto, 
-              attributes: ['nombre',"precio","descripcion"]
-            }]
-        
+                model:User,
+                attributes: ['id','username','email','direccion','numero']
+            },{
+                model:Producto,
+                attributes: ['id','nombre','descripcion','precio']
+            }
+          ]
       });
     
     res.json(pedidos);
