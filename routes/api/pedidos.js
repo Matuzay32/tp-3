@@ -4,12 +4,11 @@ const { compareSync } = require("bcryptjs");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
+const productos = require("../../models/productos");
 var obj = {
     userId:1,
-    //platoId:1,
-    tipoPago:"Credito"
+    tipoPago:"Credito",
 }
-//var obj2=JSON.stringify(obj);
 
 
 router.get("/", async(req,res)=>{
@@ -32,8 +31,8 @@ router.get("/", async(req,res)=>{
 
 router.post("/",async (req,res)=>{
   
-    //const pedido = await Pedido.create(req.body);
-    const pedido = await Pedido.create(obj);
+    const pedido = await Pedido.create(req.body);
+    //const pedido = await Pedido.create(obj);
 
     
     res.json(pedido);
