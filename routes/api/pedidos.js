@@ -1,9 +1,15 @@
 const router = require("express").Router();
 
+const { compareSync } = require("bcryptjs");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
-
+var obj = {
+    userId:1,
+    //platoId:1,
+    tipoPago:"Credito"
+}
+//var obj2=JSON.stringify(obj);
 
 
 router.get("/", async(req,res)=>{
@@ -25,9 +31,11 @@ router.get("/", async(req,res)=>{
 });
 
 router.post("/",async (req,res)=>{
+  
+    //const pedido = await Pedido.create(req.body);
+    const pedido = await Pedido.create(obj);
 
-    const pedido = await Pedido.create(req.body);
-    console.log(req,"este es mi rec");
+    
     res.json(pedido);
     console.log(res, "esta es mi respuesta");
     
