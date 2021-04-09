@@ -8,6 +8,7 @@ const apiUsers = require("./api/users");
 
 router.use("/productos" /* ,middlewares.checkToken  */,apiProductos);
 router.use("/pedidos",apiPedidos);
+
 router.use("/users",apiUsers);
 
 module.exports = router;
