@@ -4,20 +4,8 @@ const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
 const productos = require("../../models/productos");
-var carrito = [];
-
-/* var obj = {
-    platoId: "1",
-    tipoPago: "aaa",
-    userId:"1"
-}
-var obj2 = {
-    platoId: "2",
-    tipoPago: "fff",
-    userId:"2"
-}
-carrito.push(obj,obj2);
- */
+const carrito =[];
+  
 router.get("/", async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
@@ -35,22 +23,12 @@ router.get("/", async(req,res)=>{
     res.json(pedidos);
 });
 
- router.post("/",async (req,res)=>{
-   carrito.push(req.body);
-    for (let index = 0; index < carrito.length; index++) {
-     
-        const pedido = await Pedido.create(carrito[index]);
-         res.json(pedido);
-        console.log(res, "esta es mi respuesta");
-    }
-    carrito = []
-    
-    //const pedido = await Pedido.create(obj);
-    
-}); 
 
- 
- 
+
+router.post("/carrito",agregaraCarrito);
+
+
+
 
 router.put("/:pedidoId",async (req,res)=>{
 
@@ -63,6 +41,20 @@ router.put("/:pedidoId",async (req,res)=>{
 });
 
 
+router.post("/",async (req,res,)=>{
+    for (let index = 0; index < carrito.length; index++) {
+    const pedido = await Pedido.create(carrito[index]);
+    res.json(pedido);
+       console.log(res, "esta es mi respuesta");
+          
+    }
+    carrito =[];
+
+       //const pedido = await Pedido.create(obj);
+       
+}); 
+
+
 router.delete("/:pedidoId",async (req,res)=>{
 
         await Pedido.destroy({
@@ -72,12 +64,9 @@ router.delete("/:pedidoId",async (req,res)=>{
         
         
 });
-    
 
 
-
-
-function agregaraCarrito(req, res) {
+ async function agregaraCarrito(req, res) {
     var data = req.body;
 
     var pedido = {
@@ -91,11 +80,10 @@ function agregaraCarrito(req, res) {
     } else {
         carrito.push(pedido)
 
-        res.status(200).send(`Agregaste el producto al carrito`)
+        res.status(200).send("agregaste 1 producto")
     }
-
+    console.log("este es mi carrito", carrito)
     return carrito
 
 }
-
 module.exports = router;
