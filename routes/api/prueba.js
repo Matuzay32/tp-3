@@ -43,12 +43,11 @@ function agregaraCarrito(req, res) {
         userId:data.userId
     }
     if (pedido.platoId == "" || pedido.tipoPago == "") {
-        res.status(400).send(`Producto no agregado al carrito!
-        Por favor completa todos los datos requeridos.`)
+        res.status(400).send(`no se pudo agregar el producto.`)
     } else {
         carrito.push(pedido)
 
-        res.status(200).send(`Agregaste el producto al carrito`)
+        res.status(200).send(`Agregaste un producto`)
     }
 
     return carrito
