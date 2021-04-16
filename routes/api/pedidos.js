@@ -1,11 +1,11 @@
 const router = require("express").Router();
-
+const  sequelize  = require("sequelize");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
 const productos = require("../../models/productos");
-const carrito =[];
-  
+var carrito =[];
+const { QueryTypes } = require('sequelize');
 router.get("/", async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
@@ -29,7 +29,6 @@ router.post("/carrito",agregaraCarrito);
 
 
 
-
 router.put("/:pedidoId",async (req,res)=>{
 
         await Pedido.update(req.body,{
@@ -41,18 +40,24 @@ router.put("/:pedidoId",async (req,res)=>{
 });
 
 
-router.post("/",async (req,res,)=>{
-    for (let index = 0; index < carrito.length; index++) {
-    const pedido = await Pedido.create(carrito[index]);
+  router.post("/",async (req,res,)=>{
+      console.log(carrito,"estes es mi carrito");
+   for (let index = 0; index < carrito.length; index++) {
+    var pedido = await Pedido.create(carrito[index]);
+       
+       
+   }
+    
     res.json(pedido);
        console.log(res, "esta es mi respuesta");
           
-    }
-    carrito =[];
-
+   carrito =[];
        //const pedido = await Pedido.create(obj);
        
 }); 
+  
+
+
 
 
 router.delete("/:pedidoId",async (req,res)=>{
@@ -86,4 +91,6 @@ router.delete("/:pedidoId",async (req,res)=>{
     return carrito
 
 }
+
+
 module.exports = router;

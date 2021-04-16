@@ -43,11 +43,12 @@ function agregaraCarrito(req, res) {
         userId:data.userId
     }
     if (pedido.platoId == "" || pedido.tipoPago == "") {
-        res.status(400).send(`no se pudo agregar el producto.`)
+        res.status(400).send(`Producto no agregado al carrito!
+        Por favor completa todos los datos requeridos.`)
     } else {
         carrito.push(pedido)
 
-        res.status(200).send(`Agregaste un producto`)
+        res.status(200).send(`Agregaste el producto al carrito`)
     }
 
     return carrito
@@ -57,7 +58,7 @@ function agregaraCarrito(req, res) {
 function enviarPedido(req, res) {
 
     for (let index = 0; index < carrito.length; index++) {
-        sequelize.query('INSERT INTO pedidos (platoId,            tipoPago,   usuario) VALUES (?,?,?)',
+        sequelize.query('INSERT INTO pedidos (platoId, tipoPago,   usuario) VALUES (?,?,?,?,?)',
             { replacements: [carrito[index].platoId, carrito[index].tipoPago, carrito[index].userId] })
     }
     carrito = []
