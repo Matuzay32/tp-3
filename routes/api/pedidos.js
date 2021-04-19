@@ -1,11 +1,14 @@
-const router = require("express").Router();
-const  sequelize  = require("sequelize");
+const router                    = require("express").Router();
+const  sequelize                = require("sequelize");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
-const productos = require("../../models/productos");
-var carrito =[];
-const { QueryTypes } = require('sequelize');
+const productos                 = require("../../models/productos");
+var carrito                     =[];
+const { QueryTypes }            = require('sequelize');
+
+
+
 router.get("/", async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],

@@ -10,6 +10,11 @@ module.exports =(sequelize,type) =>{
         password: type.STRING,
         direccion: type.STRING,
         numero:type.STRING,
+        //Si es 0 el Usuario es normal si es 1 es una Admin
+        rol:{
+            type:type.INTEGER,
+            defaultValue:0
+        }
 
     })
 
