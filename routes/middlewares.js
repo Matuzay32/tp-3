@@ -26,6 +26,32 @@ req.usuarioId =playLoad.UsuarioId;
     next();
 }
 
+
+
+
+
+
+const rol = (req,res ,next) =>{
+
+    if(req.body.rol !=1){
+        return res.json({error:"necesitas ser administrador"})
+    }
+
+    
+   
+
+    next();
+
+
+
+}
+
+
+
+
+
+
 module.exports ={
-    checkToken : checkToken
+    checkToken : checkToken,
+    rol:rol
 }
