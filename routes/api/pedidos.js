@@ -8,6 +8,7 @@ var carrito                     =[];
 const { QueryTypes }            = require('sequelize');
 const middlewares               = require("../middlewares");
 
+//TODO: crear un end point que sea solamente para treaer los pedidos de ese usuario, osea de uno mismo
 
 
 router.get("/",middlewares.rol, async(req,res)=>{
