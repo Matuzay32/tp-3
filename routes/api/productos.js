@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const middlewares = require("../middlewares");
 const {Producto} = require("../../db")
 
 router.get("/", async(req,res)=>{
@@ -7,7 +7,7 @@ router.get("/", async(req,res)=>{
     res.json(productos);
 });
 
-router.post("/",async (req,res)=>{
+router.post("/",middlewares.rol,async (req,res)=>{
 
 const producto = await Producto.create(req.body);
 res.json(producto);
@@ -15,7 +15,7 @@ res.json(producto);
 
 });
 
-router.put("/:productoId",async (req,res)=>{
+router.put("/:productoId",middlewares.rol,async (req,res)=>{
 
     await Producto.update(req.body,{
         where:{id: req.params.productoId}
@@ -25,7 +25,7 @@ router.put("/:productoId",async (req,res)=>{
     
 });
 
-router.delete("/:productoId",async (req,res)=>{
+router.delete("/:productoId",middlewares.rol,async (req,res)=>{
 
       await Producto.destroy({
           where:{id: req.params.productoId}

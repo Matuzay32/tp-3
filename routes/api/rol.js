@@ -2,7 +2,7 @@
 const jwt      = require("jwt-simple")
 const moment   = require("moment");
 
-const checkToken = (req,res,next)=>{
+const rolCheck = (req,res,next)=>{
 
     if(!req.headers["user-token"])
     {
@@ -26,32 +26,6 @@ req.usuarioId =playLoad.UsuarioId;
     next();
 }
 
-
-
-
-
-// Este middleware checkea si eres administrador, 0 significa que no, 1 que si;
-const rol = (req,res ,next) =>{
-
-    if(req.body.rol !=1){
-        return res.json({error:"necesitas ser administrador"})
-    }
-
-    
-   
-
-    next();
-
-
-
-}
-
-
-
-
-
-
 module.exports ={
-    checkToken : checkToken,
-    rol:rol
+    rolCheck : rolCheck
 }
