@@ -6,10 +6,11 @@ const {Producto}                = require("../../db");
 const productos                 = require("../../models/productos");
 var carrito                     =[];
 const { QueryTypes }            = require('sequelize');
+const middlewares               = require("../middlewares");
 
 
 
-router.get("/", async(req,res)=>{
+router.get("/",middlewares.rol, async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
         include: [
@@ -32,7 +33,7 @@ router.post("/carrito",agregaraCarrito);
 
 
 
-router.put("/:pedidoId",async (req,res)=>{
+router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
 
         await Pedido.update(req.body,{
             where:{pedidoId: req.params.pedidoId}
@@ -63,7 +64,7 @@ router.put("/:pedidoId",async (req,res)=>{
 
 
 
-router.delete("/:pedidoId",async (req,res)=>{
+router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
 
         await Pedido.destroy({
             where:{pedidoId: req.params.pedidoId}
