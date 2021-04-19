@@ -40,7 +40,7 @@ router.put("/:pedidoId",async (req,res)=>{
 });
 
 
-  router.post("/",async (req,res,)=>{
+    router.post("/",async (req,res,)=>{
       console.log(carrito,"estes es mi carrito");
    for (let index = 0; index < carrito.length; index++) {
     var pedido = await Pedido.create(carrito[index]);
