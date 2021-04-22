@@ -46,6 +46,21 @@ const rol = (req,res ,next) =>{
 
 }
 
+//Este middleWare chekea si eres un Usuario // esta especialemente creado para el Chekequeo de la ruta mis pedidos
+const rolMisPedidos = (req,res ,next) =>{
+
+    if(req.body.rol !=0){
+        return res.json({error:"Solamente los usuarios pueden tener acceso a esta ruta"})
+    }
+
+    
+   
+
+    next();
+
+
+
+}
 
 
 
@@ -53,5 +68,6 @@ const rol = (req,res ,next) =>{
 
 module.exports ={
     checkToken : checkToken,
-    rol:rol
+    rol:rol,
+    rolMisPedidos:rolMisPedidos
 }

@@ -28,7 +28,22 @@ router.get("/",middlewares.rol, async(req,res)=>{
     res.json(pedidos);
 });
 
-
+router.get("/misPedidos",middlewares.rolMisPedidos, async(req,res)=>{
+    const pedidos =  await Pedido.findAll({
+        attributes: ['pedidoId','estado','pedidoId','tipoPago'],
+        include: [
+            {
+                model:User,
+                attributes: ['id','username','email','direccion','numero']
+            },{
+                model:Producto,
+                attributes: ['id','nombre','descripcion','precio']
+            }
+          ]
+      });
+    
+    res.json(pedidos);
+});
 
 router.post("/carrito",agregaraCarrito);
 
@@ -61,8 +76,6 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
        
 }); 
   
-
-
 
 
 router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
