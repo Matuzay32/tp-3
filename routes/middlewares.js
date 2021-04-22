@@ -50,7 +50,7 @@ const rol = (req,res ,next) =>{
 const rolMisPedidos = (req,res ,next) =>{
 
     if(req.body.rol !=0){
-        return res.json({error:"Solamente los usuarios pueden tener acceso a esta ruta"})
+        return res.json({error:"Solamente los usuarios pueden hacer uso de esta funcion, debe enviar un rol valido y su token  en los headers"})
     }
 
     
