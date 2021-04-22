@@ -33,7 +33,9 @@ router.post("/registrer",async (req,res)=>{
          res.json(
              {
                 Token:createToken(user),
-                Usuario:"ha ingresado el Usuario Correctamente"
+                Usuario:"ha ingresado el Usuario Correctamente",
+                user:user.id + "este es su usuario para hacer peticiones",
+                
                 })
     }else{
     res.json({error: " La contraseña o el usuario son incorrectos"});
@@ -54,7 +56,7 @@ const createToken = (user) =>{
     const playLoad ={
         usuarioId:user.id,
         createAt:moment().unix(),
-        expiredAt:moment().add(30,"minutes").unix()
+        expiredAt:moment().add(60,"minutes").unix()
     }
     return jwt.encode(playLoad,"frase secreta");
 

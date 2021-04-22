@@ -28,7 +28,7 @@ router.get("/",middlewares.rol, async(req,res)=>{
     res.json(pedidos);
 });
 
-router.get("/misPedidos",middlewares.rolMisPedidos, middlewares.checkToken, async(req,res)=>{
+router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
         include: [
