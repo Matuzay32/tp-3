@@ -47,9 +47,12 @@ router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
 
 
 
-    console.log("Token",token);
+    console.log("Token",playLoad.usuarioId);
     
-    const pedidos =  await Pedido.findAll();
+    const pedidos =  await Pedido.findAll({
+        where: {
+           userId: playLoad.usuarioId 
+        }});
     
     res.json(pedidos);
 
