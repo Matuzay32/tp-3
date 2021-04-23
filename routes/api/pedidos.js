@@ -32,10 +32,11 @@ router.get("/",middlewares.rol, async(req,res)=>{
 
 router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
     
-    var data = req.body;
+    
+    var data = req.headers["user-token"];
 
     var token = {
-        token: data.token,
+        token: data,
     }
 
     const userToken = token.token;
