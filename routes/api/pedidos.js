@@ -8,6 +8,8 @@ var carrito                     =[];
 const { QueryTypes }            = require('sequelize');
 const middlewares               = require("../middlewares");
 
+
+
 //TODO: crear un end point que sea solamente para treaer los pedidos de ese usuario, osea de uno mismo
 
 
@@ -29,18 +31,10 @@ router.get("/",middlewares.rol, async(req,res)=>{
 });
 
 router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
-    const pedidos =  await Pedido.findAll({
-        attributes: ['pedidoId','estado','pedidoId','tipoPago'],
-        include: [
-            {
-                model:User,
-                attributes: ['id','username','email','direccion','numero']
-            },{
-                model:Producto,
-                attributes: ['id','nombre','descripcion','precio']
-            }
-          ]
-      });
+
+
+
+    const pedidos =  await Pedido.findAll();
     
     res.json(pedidos);
 });

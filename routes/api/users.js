@@ -34,7 +34,7 @@ router.post("/registrer",async (req,res)=>{
              {
                 Token:createToken(user),
                 Usuario:"ha ingresado el Usuario Correctamente",
-                user:user.id + "este es su usuario para hacer peticiones",
+                
                 
                 })
     }else{

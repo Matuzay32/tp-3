@@ -1,6 +1,7 @@
 
 const jwt      = require("jwt-simple")
 const moment   = require("moment");
+ var  usuarioMiId;
 
 const checkToken = (req,res,next)=>{
 
@@ -12,6 +13,8 @@ const userToken = req.headers["user-token"];
 let playLoad ={};
 try{
     playLoad =jwt.decode(userToken,"frase secreta")
+   
+    
 
 }catch(err){
     return res.json({error :"El token es incorrecto"});
@@ -24,6 +27,7 @@ if(playLoad.expiredAt<moment().unix()){
 req.usuarioId =playLoad.UsuarioId;
 
     next();
+
 }
 
 
