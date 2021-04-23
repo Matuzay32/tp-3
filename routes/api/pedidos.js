@@ -52,7 +52,15 @@ router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         where: {
            userId: playLoad.usuarioId 
-        }});
+        },attributes: ['pedidoId','estado','pedidoId','tipoPago'],include: [
+            {
+                model:User,
+                attributes: ['id','username','email','direccion','numero']
+            },{
+                model:Producto,
+                attributes: ['id','nombre','descripcion','precio']
+            }
+          ]});
     
     res.json(pedidos);
 
