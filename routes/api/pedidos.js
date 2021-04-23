@@ -7,6 +7,9 @@ const productos                 = require("../../models/productos");
 var carrito                     =[];
 const { QueryTypes }            = require('sequelize');
 const middlewares               = require("../middlewares");
+const jwt      = require("jwt-simple");
+
+
 
 
 
@@ -30,14 +33,35 @@ router.get("/",middlewares.rol, async(req,res)=>{
     res.json(pedidos);
 });
 
-router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
+router.get("/misPedidos", middlewares.checkToken, async(req,res,next)=>{
+    
+    var data = req.body;
+
+    var token = {
+        token: data.token,
+    }
+
+    const userToken = token.token;
+    let playLoad ={};
+    playLoad =jwt.decode(userToken,"frase secreta")
+   
+    
 
 
 
+
+    console.log("ID",playLoad.usuarioId);
+    
     const pedidos =  await Pedido.findAll();
     
     res.json(pedidos);
+    next();
+
 });
+
+
+
+
 
 router.post("/carrito",agregaraCarrito);
 
@@ -103,6 +127,7 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
     return carrito
 
 }
+
 
 
 module.exports = router;
