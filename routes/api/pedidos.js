@@ -13,9 +13,6 @@ const jwt      = require("jwt-simple");
 
 
 
-//TODO: crear un end point que sea solamente para treaer los pedidos de ese usuario, osea de uno mismo
-
-
 router.get("/",middlewares.rol, async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
@@ -33,7 +30,7 @@ router.get("/",middlewares.rol, async(req,res)=>{
     res.json(pedidos);
 });
 
-router.get("/misPedidos", middlewares.checkToken, async(req,res,next)=>{
+router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
     
     var data = req.body;
 
@@ -49,13 +46,11 @@ router.get("/misPedidos", middlewares.checkToken, async(req,res,next)=>{
 
 
 
-
-    console.log("ID",playLoad.usuarioId);
+    console.log("Token",token);
     
     const pedidos =  await Pedido.findAll();
     
     res.json(pedidos);
-    next();
 
 });
 
