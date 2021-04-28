@@ -2,7 +2,7 @@ const  Sequelize  = require("sequelize");
 const PedidoModel = require("./models/pedido");
 const ProductoModel = require("./models/productos");
 const UserModel = require("./models/users");
-const path = 'mysql://root@localhost:3306/prueba';
+const path = 'mysql://root@localhost:3306/delilah resto';
 
 
 
