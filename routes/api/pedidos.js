@@ -12,7 +12,7 @@ const jwt      = require("jwt-simple");
 
 
 
-
+//Esta ruta es para obtener todos los pedidos Unicamente se puede tener acceso siendo administrador en el body se pone el rol =0 Usuario 1=Admin
 router.get("/",middlewares.rol, async(req,res)=>{
     const pedidos =  await Pedido.findAll({
         attributes: ['pedidoId','estado','pedidoId','tipoPago'],
@@ -30,6 +30,7 @@ router.get("/",middlewares.rol, async(req,res)=>{
     res.json(pedidos);
 });
 
+//Esta ruta es para ver los pedidos del Usuario unicamente Poniendo el token en las cabezeras se accede
 router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
     
     
@@ -69,11 +70,11 @@ router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
 
 
 
-
+//Esta ruta es para poner productos en el carrito
 router.post("/carrito",agregaraCarrito);
 
 
-
+//Esta ruta es para modificar un pedido Unicamente se puede tener acceso si se es Administrador 0= Usuario 1= ADMIN
 router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
 
         await Pedido.update(req.body,{
@@ -84,7 +85,7 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
         
 });
 
-
+//Esta ruta es para Usuarios, Esta ruta  envia lo que se puso en el carrito con una sola request 
     router.post("/",async (req,res,)=>{
       console.log(carrito,"estes es mi carrito");
    for (let index = 0; index < carrito.length; index++) {
@@ -101,7 +102,7 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
        
 }); 
   
-
+//Esta ruta borra el pedido Solamente siendo administrador se puede borrar el pedido Usuario = 0  Administrador = 1
 
 router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
 
@@ -113,7 +114,7 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
         
 });
 
-
+//Esta funcion es el carro de compras
  async function agregaraCarrito(req, res) {
     var data = req.body;
 

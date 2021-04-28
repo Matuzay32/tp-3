@@ -14,8 +14,11 @@ const sequelize_ruta = new Sequelize(path,{
 
 })
 
+//Producto contiene el modelo de productos , como primer parametro la ruta, y como segundo parametro el modulo de Sequelize
 const Producto = ProductoModel(sequelize_ruta,Sequelize);
+//User contiene el modelo de productos , como primer parametro la ruta, y como segundo parametro el modulo de Sequelize
 const User = UserModel(sequelize_ruta,Sequelize);
+//Pedido contiene el modelo de productos , como primer parametro la ruta, y como segundo parametro el modulo de Sequelize
 const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 
 
@@ -28,7 +31,8 @@ Pedido.belongsTo(Producto);
  
 //Pedido.belongsToMany(Producto, { through: "platosPorPedido" });
 //Producto.belongsToMany(Pedido, { through: "VariosPedidos" });
- 
+
+//Simplemente sincronizo las tablas
 sequelize_ruta.sync({force :false})
 .then(()=>{
     console.log("tablas sincronizadas");

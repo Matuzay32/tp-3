@@ -6,7 +6,7 @@ const apiPedidos = require("./api/pedidos");
 const apiUsers = require("./api/users");
 
 
-router.use("/productos" /* ,middlewares.checkToken  *//* ,middlewares.rol */,apiProductos);
+router.use("/productos",apiProductos);
 router.use("/pedidos",apiPedidos);
 router.use("/pedidos/carrito",apiPedidos);
 
