@@ -71,7 +71,7 @@ router.get("/misPedidos", middlewares.checkToken, async(req,res)=>{
 
 
 //Esta ruta es para poner productos en el carrito
-router.post("/carrito",agregaraCarrito);
+router.post("/carrito",middlewares.checkToken,agregaraCarrito);
 
 
 //Esta ruta es para modificar un pedido Unicamente se puede tener acceso si se es Administrador 0= Usuario 1= ADMIN
