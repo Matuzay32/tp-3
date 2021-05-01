@@ -116,12 +116,16 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
 
 //Esta funcion es el carro de compras
  async function agregaraCarrito(req, res) {
+    var cabecera = req.headers["user-token"];
+   var usuario=  jwt.decode(cabecera,"frase secreta")
+
+
     var data = req.body;
 
     var pedido = {
         platoId: data.platoId,
         tipoPago: data.tipoPago,
-        userId:data.userId
+        userId:usuario.usuarioId
     }
     if (pedido.platoId == "" || pedido.tipoPago == ""||pedido.userId=="") {
         res.status(400).send(`Producto no agregado al carrito!
@@ -131,7 +135,8 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
 
         res.status(200).send("agregaste 1 producto")
     }
-    console.log("este es mi carrito", carrito)
+    console.log("este es mi carrito", carrito);
+    console.log("esta es mi cabecera",usuario.usuarioId);
     return carrito
 
 }
