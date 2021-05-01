@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const middlewares = require("../middlewares");
 const {Producto} = require("../../db")
+//Tanto los administradores como usuarios pueden ver todos los productos
 
 router.get("/", async(req,res)=>{
     const productos =  await Producto.findAll();
@@ -8,7 +9,7 @@ router.get("/", async(req,res)=>{
 
 });
 
-//Tanto los administradores como usuarios pueden ver todos los productos
+// Solamente un Usuario con rol de Administrador puede crear un pedido Administrador = 1 Usuario =0
 router.post("/",middlewares.rol,async (req,res)=>{
 
 const producto = await Producto.create(req.body);
