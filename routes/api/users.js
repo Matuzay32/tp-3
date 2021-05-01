@@ -46,7 +46,8 @@ router.post("/registrer",async (req,res)=>{
      if (user) {
          
      }else{
-     res.json({error: " La contraseña o el usuario son incorrectos"});
+        res.json({error: " La contraseña o el usuario son incorrectos"});
+
          
      }
  
