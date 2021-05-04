@@ -65,12 +65,12 @@ Claro esta el objeto que retorna va ser del tipo json
 ```javascript
 //Example 
  {
-        id: 1,
-        nombre: "Hamburguesa",
-        descripcion: "Hamburguesa completa",
-        precio:850,
-        createdAt: "2021-05-01T01:07:50.000Z",
-        updatedAt: "2021-05-01T01:07:50.000Z"
+       "id": "1",
+        "nombre": "Hamburguesa",
+        "descripcion": "Hamburguesa completa",
+        "precio":"850",
+        "createdAt": "2021-05-01T01:07:50.000Z",
+        "updatedAt": "2021-05-01T01:07:50.000Z"
   
 
 }
@@ -80,13 +80,28 @@ http://localhost:3000/api/productos	POST: esta ruta es para crear un producto nu
 para hacerlo el rol debe ser 1
 
 ```javascript
-//Example 
+//Example body
  {
         
-        nombre: "Hamburguesa",
-        descripcion: "Hamburguesa completa",
-        precio:850,
-        rol: "1",
+        "nombre": "Hamburguesa",
+        "descripcion": "Hamburguesa completa",
+        "precio":"850",
+        "rol": "1"
+        
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
+
+}
+```
+http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o cambiar un producto segun la ID del mismo, este end point tambien, puede ser ultilizado unicamente por un usuario con  privilegios de Administrador.
+```javascript
+//Example body 
+ {
+        
+        "nombre": "Sushi",
+        "descripcion": "Buenos Aires sushi",
+        "precio":"2000",
+        "rol": "1"
         
   //Rol 1 = Administrador 
   //Rol 0 = Usuario
@@ -94,9 +109,22 @@ para hacerlo el rol debe ser 1
 }
 ```
 
+http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar un producto en base a su ID, este end point tambien, puede ser ultilizado unicamente por un usuario con  privilegios de Administrador.
 
 
 
+```javascript
+//Example body 
+ {
+        
+        "rol": "1"
+        
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
+
+}
+```
+----
 
 
 ## Desarrollador 
