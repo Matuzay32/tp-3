@@ -12,10 +12,8 @@ Puede hacer click sobre los contenidos para para hacer una busqueda mas rapida
 
 - [Descripción ](#Descripción)
 - [Como Usarla](#Como-Usarla)
-- [References](#references)
--[Instalacion](#Instalacion)
-
-- [Author Info](#Hecho-por)
+- [Instalacion](#Instalacion)
+- [Desarrollador](#Desarrollador)
 
 ---
 
@@ -42,7 +40,7 @@ Delilah Restó,  es una aplicación de pedidos de comida o delivery Online. Esta
 
 
 
-## Hecho por 
+## Desarrollador 
 
 - Ezequiel Rey - [eze.rey92@gmail.com]
 
