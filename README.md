@@ -62,6 +62,7 @@ http://localhost:3000/api/productos GET Esta ruta refleja todos los productos qu
 
 Claro esta el objeto que retorna va ser del tipo json
 ```javascript
+//Example Return
 const exampleReturn = {
         id: 1,
         nombre: "Hamburguesa",
