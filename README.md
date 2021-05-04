@@ -56,8 +56,9 @@ y la direccion en donde debe hacer esto es el servidor local "http://localhost/p
 
 ## End points
 
+---
+PRODUCTOS 
 
-PRODUCTOS : 
 http://localhost:3000/api/productos GET: Esta ruta refleja todos los productos que se encuentran en la base de datos, y devuelve un json.
 
 Claro esta el objeto que retorna va ser del tipo json
@@ -74,6 +75,8 @@ const exampleReturn = {
 
 }
 ```
+http://localhost:3000/api/productos	POST: esta ruta es para crear un producto nuevo 
+
 
 
 
