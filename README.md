@@ -51,7 +51,29 @@ Tambien debe descargar he instalar XAMPP para poder inicializar la base de datos
 En la carpeta raiz tiene una base de datos creada con usuarios y pedidos, si no desea usar esa base y por lo contrario piensa comenzar una desde cero, puede hacerlo la unica condicion para hacer esto es que el nombre la base a crear debe ser "delilah_resto"
 y la direccion en donde debe hacer esto es el servidor local "http://localhost/phpmyadmin".
 
-Como iniciar el servidor, puede hacerlo de manera sencilla con nodemon simplemente debe poner en la terminal nodemon con eso se incializa correctamente el nodemon claro esta desde su editor de codigo va poder ver las sentencias que se van a ir ejecutando.
+¿Como iniciar el servidor?: puede hacerlo de manera sencilla con nodemon simplemente debe poner en la terminal nodemon con eso se incializa correctamente el nodemon, claro esta desde su editor de codigo va poder ver las sentencias que se van a ir ejecutando.
+
+
+## End points
+
+
+PRODUCTOS : 
+http://localhost:3000/api/productos GET Esta ruta refleja todos los productos que se encuentran en la base de datos, y devuelve un json.
+
+Claro esta el objeto que retorna va ser del tipo json
+```javascript
+const exampleReturn = {
+        id: 1,
+        nombre: "Hamburguesa",
+        descripcion: "Hamburguesa completa",
+        precio:850,
+        createdAt: "2021-05-01T01:07:50.000Z",
+        updatedAt: "2021-05-01T01:07:50.000Z"
+  
+
+}
+```
+
 
 
 
