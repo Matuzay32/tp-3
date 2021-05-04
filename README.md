@@ -124,7 +124,7 @@ http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar u
 
 }
 ```
-----
+---
 
 
 ## Desarrollador 
