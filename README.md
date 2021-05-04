@@ -63,8 +63,8 @@ http://localhost:3000/api/productos GET: Esta ruta refleja todos los productos q
 
 Claro esta el objeto que retorna va ser del tipo json
 ```javascript
-//Example Return
-const exampleReturn = {
+//Example 
+ {
         id: 1,
         nombre: "Hamburguesa",
         descripcion: "Hamburguesa completa",
@@ -80,8 +80,8 @@ http://localhost:3000/api/productos	POST: esta ruta es para crear un producto nu
 para hacerlo el rol debe ser 1
 
 ```javascript
-//Example Return
-const exampleProducto = {
+//Example 
+ {
         
         nombre: "Hamburguesa",
         descripcion: "Hamburguesa completa",
