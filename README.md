@@ -81,7 +81,7 @@ SOFTWARE.
 
 ## Hecho por 
 
-- Ezequiel Rey - [@email](eze.rey92@gmail.com)
+- Ezequiel Rey - [eze.rey92@gmail.com]
 
 
 [Back To The Top](#read-me-template)
