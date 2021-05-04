@@ -1,6 +1,7 @@
-# Read Me Template
+# Delilah Restó
 
-![Project Image](project-image-url)
+
+
 
 > This is a ReadMe template to help save you time and effort.
 
@@ -80,7 +81,7 @@ SOFTWARE.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
+- Ezequiel Rey - [@jamesqquick](https://twitter.com/jamesqquick)
 - Website - [James Q Quick](https://jamesqquick.com)
 
 [Back To The Top](#read-me-template)
