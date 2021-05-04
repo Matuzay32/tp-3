@@ -10,44 +10,35 @@
 ### Contenidos
 Puede hacer click sobre los contenidos para para hacer una busqueda mas rapida
 
-- [Description](#description)
-- [How To Use](#how-to-use)
+- [Descripción ](#Descripción)
+- [Como Usarla](#Como-Usarla)
 - [References](#references)
+-[Instalacion](#Instalacion)
 
 - [Author Info](#Hecho-por)
 
 ---
 
-## Description
+## Descripción 
 
-Creating ReadMe's for your Github repository can be tedious.  I hope this template can save you time and effort as well as provide you with some consistency across your projects.
+Delilah Restó,  es una aplicación de pedidos de comida o delivery Online. Esta es la tercer entrega de trabajos de Acamica 
 
 #### Technologies
 
 - Technology 1
 - Technology 2
 
-[Back To The Top](#read-me-template)
+[Volver al inicio](#Contenidos)
 
 ---
 
-## How To Use
+## Como Usarla
 
-#### Installation
+#### Instalacion
 
 
 
-#### API Reference
 
-```html
-    <p>dummy code</p>
-```
-[Back To The Top](#read-me-template)
-
----
-
-## References
-[Back To The Top](#read-me-template)
 
 
 
@@ -56,4 +47,4 @@ Creating ReadMe's for your Github repository can be tedious.  I hope this templa
 - Ezequiel Rey - [eze.rey92@gmail.com]
 
 
-[Back To The Top](#read-me-template)
+[Volver al inicio](#Contenidos)
