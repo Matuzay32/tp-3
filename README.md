@@ -81,6 +81,9 @@ para hacerlo el rol debe ser 1
 
 ```javascript
 //Example body
+
+//Rol 1 = Administrador 
+//Rol 0 = Usuario
  {
         
         "nombre": "Hamburguesa",
@@ -88,14 +91,17 @@ para hacerlo el rol debe ser 1
         "precio":"850",
         "rol": "1"
         
-  //Rol 1 = Administrador 
-  //Rol 0 = Usuario
+ 
 
 }
 ```
 http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o cambiar un producto segun la ID del mismo, este end point tambien, puede ser ultilizado unicamente por un usuario con  privilegios de Administrador.
 ```javascript
 //Example body 
+
+//Rol 1 = Administrador 
+//Rol 0 = Usuario
+
  {
         
         "nombre": "Sushi",
@@ -103,9 +109,7 @@ http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o 
         "precio":"2000",
         "rol": "1"
         
-  //Rol 1 = Administrador 
-  //Rol 0 = Usuario
-
+  
 }
 ```
 
@@ -115,12 +119,14 @@ http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar u
 
 ```javascript
 //Example body 
+
+//Rol 1 = Administrador 
+//Rol 0 = Usuario
  {
         
         "rol": "1"
         
-  //Rol 1 = Administrador 
-  //Rol 0 = Usuario
+  
 
 }
 ```
@@ -132,6 +138,9 @@ http://localhost:3000/api/users/registrer Este end point sirve para registrar un
 
 ```javascript
 //Example body, EL ROL POR DEFECTO ES  (0)
+
+//Rol 1 = Administrador 
+//Rol 0 = Usuario
  {
         
         "username": "Admin",
@@ -141,8 +150,7 @@ http://localhost:3000/api/users/registrer Este end point sirve para registrar un
         "direccion":"calle 1234"
         
         
-  //Rol 1 = Administrador 
-  //Rol 0 = Usuario
+  
 
 }
 ```
@@ -152,6 +160,12 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
 //Example body en caso de que algun dato este mal se va enviar un error 
 // En caso de que todo este bien se va enviar un token que luego se usara en el cabeceras de varios end Points
 // El token se genera por cada ingreso que el usuario hace y  expira en 24h aproximadamente 
+
+
+       
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
+
  {
         
         "username": "Admin",
@@ -159,10 +173,7 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
         "email": "admin@gmail.com",
         
         
-        
-  //Rol 1 = Administrador 
-  //Rol 0 = Usuario
-
+ 
 }
 ```
 
