@@ -8,7 +8,7 @@
 ---
 
 ### Contenidos
-Puede hacer click sobre los contenidos para para hacer una busqueda mas rapida
+Puede hacer click sobre los contenidos  para hacer una busqueda mas rapida
 
 - [Descripción ](#Descripción)
 - [Como Usarla](#Como-Usarla)
@@ -51,7 +51,7 @@ Tambien debe descargar he instalar XAMPP para poder inicializar la base de datos
 En la carpeta raiz tiene una base de datos creada con usuarios y pedidos, si no desea usar esa base y por lo contrario piensa comenzar una desde cero, puede hacerlo la unica condicion para hacer esto es que el nombre la base a crear debe ser "delilah_resto"
 y la direccion en donde debe hacer esto es el servidor local "http://localhost/phpmyadmin".
 
-¿Como iniciar el servidor?: puede hacerlo de manera sencilla con nodemon simplemente debe poner en la terminal nodemon con eso se incializa correctamente el nodemon, claro esta desde su editor de codigo va poder ver las sentencias que se van a ir ejecutando.
+¿Como iniciar el servidor? puede hacerlo de manera sencilla con nodemon. Simplemente debe poner en la terminal nodemon con eso se incializa correctamente. Desde  su editor de codigo usted podra  ver las sentencias que se van a ir ejecutando.
 
 
 ## End points
