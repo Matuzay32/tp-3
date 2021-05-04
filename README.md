@@ -21,10 +21,11 @@ Puede hacer click sobre los contenidos para para hacer una busqueda mas rapida
 
 Delilah Restó,  es una aplicación de pedidos de comida o delivery Online. Esta es la tercer entrega de trabajos de Acamica 
 
-#### Technologies
+#### Tecnologias Utilizadas 
 
-- Technology 1
-- Technology 2
+- Node.js
+- JavaScript
+- MySQL
 
 [Volver al inicio](#Contenidos)
 
