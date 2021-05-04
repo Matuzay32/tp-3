@@ -3,7 +3,7 @@
 
 
 
-> This is a ReadMe template to help save you time and effort.
+> Estas son las instrucciones de la aplicacion de pedidos Online Delilah Restó
 
 ---
 
