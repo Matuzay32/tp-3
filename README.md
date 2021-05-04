@@ -79,9 +79,9 @@ SOFTWARE.
 
 ---
 
-## Author Info
+## Hecho por 
 
-- Ezequiel Rey - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
+- Ezequiel Rey - [@email](eze.rey92@gmail.com)
+
 
 [Back To The Top](#read-me-template)
