@@ -13,8 +13,8 @@ Puede hacer click sobre los contenidos para para hacer una busqueda mas rapida
 - [Description](#description)
 - [How To Use](#how-to-use)
 - [References](#references)
-- [License](#license)
-- [Author Info](#author-info)
+
+- [Author Info](#Hecho-por)
 
 ---
 
