@@ -75,10 +75,24 @@ const exampleReturn = {
 
 }
 ```
-http://localhost:3000/api/productos	POST: esta ruta es para crear un producto nuevo 
 
+http://localhost:3000/api/productos	POST: esta ruta es para crear un producto nuevo, solamente se puede hacer si se es administrador
+para hacerlo el rol debe ser 1
 
+```javascript
+//Example Return
+const exampleProducto = {
+        
+        nombre: "Hamburguesa",
+        descripcion: "Hamburguesa completa",
+        precio:850,
+        rol: "1",
+        
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
 
+}
+```
 
 
 
