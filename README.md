@@ -125,7 +125,46 @@ http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar u
 }
 ```
 ---
+USUARIOS
 
+
+http://localhost:3000/api/users/registrer Este end point sirve para registrar un usuario
+
+```javascript
+//Example body, EL ROL POR DEFECTO ES  (0)
+ {
+        
+        "username": "Admin",
+        "password": "Admin",
+        "email": "admin@gmail.com",
+        "numero": "47933255",
+        "direccion":"calle 1234"
+        
+        
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
+
+}
+```
+http://localhost:3000/api/users/login  Este end point sirve para ingresar como un usuario
+
+```javascript
+//Example body en caso de que algun dato este mal se va enviar un error 
+// En caso de que todo este bien se va enviar un token que luego se usara en el cabeceras de varios end Points
+// El token se genera por cada ingreso que el usuario hace y  expira en 24h aproximadamente 
+ {
+        
+        "username": "Admin",
+        "password": "Admin",
+        "email": "admin@gmail.com",
+        
+        
+        
+  //Rol 1 = Administrador 
+  //Rol 0 = Usuario
+
+}
+```
 
 ## Desarrollador 
 
