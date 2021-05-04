@@ -57,7 +57,7 @@ y la direccion en donde debe hacer esto es el servidor local "http://localhost/p
 ## End points
 
 ---
-PRODUCTOS 
+ ## PRODUCTOS 
 
 http://localhost:3000/api/productos GET: Esta ruta refleja todos los productos que se encuentran en la base de datos, y devuelve un json.
 
@@ -131,7 +131,7 @@ http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar u
 }
 ```
 ---
-USUARIOS
+## USUARIOS
 
 
 http://localhost:3000/api/users/registrer Este end point sirve para registrar un usuario
@@ -176,6 +176,39 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
  
 }
 ```
+---
+
+
+
+
+## PEDIDOS
+
+http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los pedidos que hizo el usuario para ello hay que agregar el token en las cabeceras
+
+
+```javascript
+//Example Header
+
+ {
+        
+        
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 ## Desarrollador 
 
