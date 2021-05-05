@@ -3,12 +3,12 @@
 
 
 
-> Estas son las instrucciones de la aplicacion de pedidos Online (Delilah Restó)
+> Estas son las instrucciones de la aplicación de pedidos Online (Delilah Restó)
 
 ---
 
 ### Contenidos
-Puede hacer click sobre los contenidos  para hacer una busqueda mas rapida
+Puede hacer click sobre los contenidos para hacer una búsqueda más rápida
 
 - [Descripción ](#Descripción)
 - [Como Usarla](#Como-Usarla)
@@ -33,7 +33,7 @@ Delilah Restó,  es una aplicación de pedidos de comida o delivery Online. Este
 
 ## Como Usarla
 
-#### Instalacion
+#### Instalación
 
 Abrir una terminal e instalar las siguientes dependencias en caso de que no se encuentren instaladas de manera correcta
 
@@ -44,14 +44,14 @@ Abrir una terminal e instalar las siguientes dependencias en caso de que no se e
 - npm install jwt-simple
 - npm install mysql2
 
-Tambien debe descargar he instalar XAMPP para poder inicializar la base de datos como sugerencia puede hacerlo desde "https://www.apachefriends.org/es/download.html"
+También  debe descargar he instalar XAMPP para poder inicializar la base de datos como sugerencia puede hacerlo desde "https://www.apachefriends.org/es/download.html"
 
 #### Base de datos
 
-En la carpeta raiz tiene una base de datos creada con usuarios y pedidos, si no desea usar esa base y por lo contrario piensa comenzar una desde cero, puede hacerlo la unica condicion para hacer esto es que el nombre la base a crear debe ser "delilah_resto"
-y la direccion en donde debe hacer esto es el servidor local "http://localhost/phpmyadmin".
+En la carpeta raíz  tiene una base de datos creada con usuarios y pedidos, si no desea usar esa base y por lo contrario piensa comenzar una desde cero, puede hacerlo la unica condicion para hacer esto es que el nombre la base a crear debe ser "delilah_resto"
+y la dirección en donde debe hacer esto es el servidor local "http://localhost/phpmyadmin".
 
-¿Como iniciar el servidor? puede hacerlo de manera sencilla con nodemon. Simplemente debe poner en la terminal nodemon con eso se incializa correctamente. Desde  su editor de codigo usted podra  ver las sentencias que se van a ir ejecutando.
+¿Como iniciar el servidor? puede hacerlo de manera sencilla con nodemon. Simplemente debe poner en la terminal nodemon con eso se incializa correctamente. Desde  su editor de código  usted podrá  ver las sentencias que se van a ir ejecutando.
 ----------
 
 ## End points
@@ -95,7 +95,7 @@ para hacerlo el rol debe ser 1
 
 }
 ```
-http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o cambiar un producto segun la ID del mismo, este end point tambien, puede ser ultilizado unicamente por un usuario con  privilegios de Administrador.
+http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o cambiar un producto según  la ID del mismo, este end point también, puede ser utilizado  únicamente  por un usuario con  privilegios de Administrador.
 ```javascript
 //Example body 
 
@@ -113,7 +113,7 @@ http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o 
 }
 ```
 
-http://localhost:3000/api/productos/{id} DELETE: Esta ruta sirve para eliminar un producto en base a su ID, este end point tambien, puede ser ultilizado unicamente por un usuario con  privilegios de Administrador.
+http://localhost:3000/api/productos/{id} DELETE:  Esta ruta sirve para eliminar un producto según  la ID del mismo, este end point también, puede ser utilizado  únicamente  por un usuario con  privilegios de Administrador.
 
 
 
