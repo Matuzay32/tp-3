@@ -192,7 +192,7 @@ http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los p
  {
         
         
-        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        "user-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvSWQiOjEsImNyZWF0ZUF0IjoxNjIwMjI5NTc0LCJleHBpcmVkQXQiOjE2MjAyMzMxNzR9.7OyiVVw_gqm_U5FS3ec0KFgNgpiIngPdo0463FYTUoc"
         
         
  
