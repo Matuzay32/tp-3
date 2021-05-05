@@ -52,11 +52,11 @@ En la carpeta raiz tiene una base de datos creada con usuarios y pedidos, si no 
 y la direccion en donde debe hacer esto es el servidor local "http://localhost/phpmyadmin".
 
 ¿Como iniciar el servidor? puede hacerlo de manera sencilla con nodemon. Simplemente debe poner en la terminal nodemon con eso se incializa correctamente. Desde  su editor de codigo usted podra  ver las sentencias que se van a ir ejecutando.
-
+---
 
 ## End points
 
----
+
  ## PRODUCTOS 
 
 http://localhost:3000/api/productos GET: Esta ruta refleja todos los productos que se encuentran en la base de datos, y devuelve un json.
