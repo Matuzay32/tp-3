@@ -35,7 +35,7 @@ Delilah Restó,  es una aplicación de pedidos de comida o delivery Online. Este
 
 #### Instalacion
 
-Abrir una terminal he instalar las siguientes dependencias en caso de que no se encuentren instaladas de manera correcta
+Abrir una terminal e instalar las siguientes dependencias en caso de que no se encuentren instaladas de manera correcta
 
 - npm install nodemon
 - npm install express
@@ -200,14 +200,79 @@ http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los p
 ```
 
 
+http://localhost:3000/api/pedidos GET: Estar ruta requiere el TOKEN y requiere el rol de administrador 
+
+
+
+```javascript
+//Example Header
+
+ {
+        
+        
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
+}
+```
 
 
 
 
+```javascript
+//Example body
+
+ {
+        
+        
+        "rol": "1"
+        
+        
+ 
+}
+```
+
+
+
+http://localhost:3000/api/pedidos/carrito POST: Esta ruta requiere el TOKEN en la cabecera y en el body el pedido que desea hacer, siempre es conveniente primero usar esta ruta y luego la que viene a continuacion, primero se carga el carro
+
+
+
+```javascript
+//Example Header
+
+ {
+        
+        
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
+}
+```
 
 
 
 
+```javascript
+//Example body
+
+ {
+        
+        
+        
+        
+        
+        "platoId":1, // Este seria el id del plato que se quiere pedir 
+        "tipoPago":"efectivo" // Este seria como desea pagarlo si en efectivo o que el medio de pago sea credito
+
+        
+ 
+}
+```
+
+http://localhost:3000/api/pedidos/enviar POST: Esta ruta se debe usar despues del carro para poder enviar lo que el carro tiene, simplemente se envia lo del carro, una ves que este tiene todos los requisitos
 
 
 ## Desarrollador 
