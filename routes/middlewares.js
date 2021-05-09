@@ -53,7 +53,7 @@ const rol = (req,res ,next) =>{
 }
 
 //Este middleWare chekea si eres un Usuario // esta especialemente creado para el Chekequeo de la ruta mis pedidos
-const rolMisPedidos = (req,res ,next) =>{
+/* const rolMisPedidos = (req,res ,next) =>{
 
     if(req.body.rol !=0){
         return res.json({error:"Solamente los usuarios pueden hacer uso de esta funcion, debe enviar un rol valido y su token  en los headers"})
@@ -67,7 +67,7 @@ const rolMisPedidos = (req,res ,next) =>{
 
 
 }
-
+ */
 
 
 
@@ -75,5 +75,5 @@ const rolMisPedidos = (req,res ,next) =>{
 module.exports ={
     checkToken : checkToken,
     rol:rol,
-    rolMisPedidos:rolMisPedidos,
+  /*   rolMisPedidos:rolMisPedidos, */
 }
