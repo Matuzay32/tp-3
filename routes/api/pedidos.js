@@ -90,10 +90,12 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
 //Esta ruta es para Usuarios, Esta ruta  envia lo que se puso en el carrito con una sola request 
 router.post("/enviar",async (req,res,)=>{
        
-      console.log(carrito,"estes es mi carrito");
+   var podructo = await productoPedido.create(carrito[0]);
+    
    for (let index = 0; index < carrito.length; index++) {
     var pedido = await Pedido.create(carrito[index]);
    }
+
     res.json(pedido);
     carrito =[];
        
@@ -138,7 +140,6 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
     return carrito
 
 }
-
 
 
 module.exports = router;

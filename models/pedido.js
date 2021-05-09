@@ -1,6 +1,6 @@
 
 module.exports =(sequelize,type) =>{
-    const Pedidos=  sequelize.define("pedidos",{
+    const Pedidos=  sequelize.define("carritos",{
         //Creo un foegenKey Auto increment
         pedidoId:{
             type: type.INTEGER,
