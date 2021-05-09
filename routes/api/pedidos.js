@@ -3,6 +3,7 @@ const  sequelize                = require("sequelize");
 const {Pedido}                  = require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
+const {ProductoPedido}          = require("../../db");
 const productos                 = require("../../models/productos");
 var carrito                     =[];
 const { QueryTypes }            = require('sequelize');
@@ -88,6 +89,7 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
 //Esta ruta es para Usuarios, Esta ruta  envia lo que se puso en el carrito con una sola request 
     router.post("/enviar",async (req,res,)=>{
       console.log(carrito,"estes es mi carrito");
+      
    for (let index = 0; index < carrito.length; index++) {
     var pedido = await Pedido.create(carrito[index]);
        

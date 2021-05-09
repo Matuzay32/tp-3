@@ -1,7 +1,10 @@
 const  Sequelize  = require("sequelize");
 const PedidoModel = require("./models/pedido");
 const ProductoModel = require("./models/productos");
+const ProductoPedidoModel = require("./models/productoPedido");
+
 const UserModel = require("./models/users");
+const pedido = require("./models/pedido");
 const path = 'mysql://root@localhost:3306/delilah_resto';
 
 
@@ -13,6 +16,7 @@ const sequelize_ruta = new Sequelize(path,{
     dialect: "mssql"
 
 })
+const productoPedido = ProductoPedidoModel(sequelize_ruta,Sequelize);
 
 //Producto contiene el modelo de productos , como primer parametro la ruta, y como segundo parametro el modulo de Sequelize
 const Producto = ProductoModel(sequelize_ruta,Sequelize);
@@ -29,8 +33,11 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
 Pedido.belongsTo(User);
 Pedido.belongsTo(Producto);
  
-//Pedido.belongsToMany(Producto, { through: "platosPorPedido" });
-//Producto.belongsToMany(Pedido, { through: "VariosPedidos" });
+/* Producto.belongsToMany(productoPedido, { through: productoPedido });
+productoPedido.belongsToMany(Producto, { through: productoPedido }); */
+productoPedido.belongsTo(User);
+productoPedido.belongsTo(Pedido);
+productoPedido.belongsTo(Producto);
 
 //Simplemente sincronizo las tablas
 sequelize_ruta.sync({force :false})
@@ -40,5 +47,6 @@ sequelize_ruta.sync({force :false})
 module.exports ={
     Producto,
     User,
-    Pedido
+    Pedido,
+    productoPedido
 }
