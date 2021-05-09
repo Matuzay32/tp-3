@@ -89,10 +89,22 @@ para hacerlo el rol debe ser 1
         "nombre": "Hamburguesa",
         "descripcion": "Hamburguesa completa",
         "precio":"850",
-        "rol": "1"
+        
         
  
 
+}
+```
+```javascript
+//Example Header
+
+ {
+        
+        
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
 }
 ```
 http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o cambiar un producto según  la ID del mismo, este end point también, puede ser utilizado  únicamente  por un usuario con  privilegios de Administrador.
@@ -107,9 +119,21 @@ http://localhost:3000/api/productos/{id} PUT: Esta ruta sirve para actualizar o 
         "nombre": "Sushi",
         "descripcion": "Buenos Aires sushi",
         "precio":"2000",
-        "rol": "1"
+        
         
   
+}
+```
+```javascript
+//Example Header
+
+ {
+        
+        
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
 }
 ```
 
@@ -118,16 +142,15 @@ http://localhost:3000/api/productos/{id} DELETE:  Esta ruta sirve para eliminar 
 
 
 ```javascript
-//Example body 
+//Example Header
 
-//Rol 1 = Administrador 
-//Rol 0 = Usuario
  {
         
-        "rol": "1"
         
-  
-
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
+        
+        
+ 
 }
 ```
 ---
@@ -147,7 +170,9 @@ http://localhost:3000/api/users/registrer Este end point sirve para registrar un
         "password": "Admin",
         "email": "admin@gmail.com",
         "numero": "47933255",
-        "direccion":"calle 1234"
+        "direccion":"calle 1234",
+        "rol":"1" // si se quiere ser administrador se genera el rol 1 es a modo de prueba sino por defecto es 0
+
         
         
   
@@ -160,7 +185,9 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
 //Example body en caso de que algun dato este mal se va enviar un error 
 // En caso de que todo este bien se va enviar un token que luego se usara en el cabeceras de varios end Points
 // El token se genera por cada ingreso que el usuario hace y  expira en 24h aproximadamente 
+// si en la base de datos el Usuario es adm va tener que poner el rol = 1 en caso de ser un usuario el rol va ser =0 en caso de que el rol no concuerde con el de la base de datos va tirar un error que dira que el mismo no concuerda con el de la base de datos 
 
+//Claro esta el token que genera es distinto para un usuario administrador que para uno que no lo es
 
        
   //Rol 1 = Administrador 
@@ -171,6 +198,9 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
         "username": "Admin",
         "password": "Admin",
         "email": "admin@gmail.com",
+        "rol": "1",
+
+
         
         
  
@@ -183,7 +213,7 @@ http://localhost:3000/api/users/login  Este end point sirve para ingresar como u
 
 ## PEDIDOS
 
-http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los pedidos que hizo el usuario para ello hay que agregar el token en las cabeceras
+http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los pedidos que hizo el usuario, para ello hay que agregar el token en las cabeceras
 
 
 ```javascript
@@ -192,7 +222,7 @@ http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los p
  {
         
         
-        "user-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvSWQiOjEsImNyZWF0ZUF0IjoxNjIwMjI5NTc0LCJleHBpcmVkQXQiOjE2MjAyMzMxNzR9.7OyiVVw_gqm_U5FS3ec0KFgNgpiIngPdo0463FYTUoc"
+        "user-token": "EL TOKEN QUE SE GENERA CUANDO SE HACE USO DE LA RUTA LOGIN"
         
         
  
@@ -200,7 +230,7 @@ http://localhost:3000/api/pedidos/misPedidos GET: Esta ruta devuelve todos los p
 ```
 
 
-http://localhost:3000/api/pedidos GET: Estar ruta requiere el TOKEN y requiere el rol de administrador 
+http://localhost:3000/api/pedidos GET: Estar ruta requiere el TOKEN y requiere el rol de administrador que se aplica instantaneamente cuando se pone el token
 
 
 
@@ -220,18 +250,7 @@ http://localhost:3000/api/pedidos GET: Estar ruta requiere el TOKEN y requiere e
 
 
 
-```javascript
-//Example body
 
- {
-        
-        
-        "rol": "1"
-        
-        
- 
-}
-```
 
 
 
