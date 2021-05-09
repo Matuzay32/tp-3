@@ -1,6 +1,7 @@
 const router                    = require("express").Router();
 const  sequelize                = require("sequelize");
-const {Pedido}                  = require("../../db");
+const {Pedido }                  = require("../../db");
+const {productoPedido}          =require("../../db");
 const {User}                    = require("../../db");
 const {Producto}                = require("../../db");
 const {ProductoPedido}          = require("../../db");
@@ -87,20 +88,15 @@ router.put("/:pedidoId",middlewares.rol,async (req,res)=>{
 });
 
 //Esta ruta es para Usuarios, Esta ruta  envia lo que se puso en el carrito con una sola request 
-    router.post("/enviar",async (req,res,)=>{
+router.post("/enviar",async (req,res,)=>{
+       
       console.log(carrito,"estes es mi carrito");
-      
    for (let index = 0; index < carrito.length; index++) {
     var pedido = await Pedido.create(carrito[index]);
-       
-       
    }
-    
     res.json(pedido);
-       console.log(res, "esta es mi respuesta");
-          
-   carrito =[];
-       //const pedido = await Pedido.create(obj);
+    carrito =[];
+       
        
 }); 
   
@@ -118,16 +114,16 @@ router.delete("/:pedidoId",middlewares.rol,async (req,res)=>{
 
 //Esta funcion es el carro de compras
  async function agregaraCarrito(req, res) {
+  
     var cabecera = req.headers["user-token"];
    var usuario=  jwt.decode(cabecera,"frase secreta")
-
-
+//Este dato es que viene de la tabla productos pedidos
     var data = req.body;
 
     var pedido = {
         platoId: data.platoId,
         tipoPago: data.tipoPago,
-        userId:usuario.usuarioId
+        userId:usuario.usuarioId,
     }
     if (pedido.platoId == "" || pedido.tipoPago == ""||pedido.userId=="") {
         res.status(400).send(`Producto no agregado al carrito!

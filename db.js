@@ -32,12 +32,15 @@ const Pedido = PedidoModel(sequelize_ruta,Sequelize);
  
 Pedido.belongsTo(User);
 Pedido.belongsTo(Producto);
+Pedido.belongsTo(productoPedido);
  
 /* Producto.belongsToMany(productoPedido, { through: productoPedido });
 productoPedido.belongsToMany(Producto, { through: productoPedido }); */
 productoPedido.belongsTo(User);
-productoPedido.belongsTo(Pedido);
 productoPedido.belongsTo(Producto);
+
+
+
 
 //Simplemente sincronizo las tablas
 sequelize_ruta.sync({force :false})
