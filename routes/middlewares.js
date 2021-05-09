@@ -38,8 +38,11 @@ req.usuarioId =playLoad.UsuarioId;
 
 // Este middleware checkea si eres administrador, 0 significa que no, 1 que si;
 const rol = (req,res ,next) =>{
+    var cabecera = req.headers["user-token"];
+    var usuario=  jwt.decode(cabecera,"frase secreta");
+    console.log("esta es mi cabecera",usuario.rolUsuario);
 
-    if(req.body.rol !=1){
+    if(usuario.rolUsuario !=1){
         return res.json({error:"necesitas ser administrador"})
     }
 
